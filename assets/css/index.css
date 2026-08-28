@@ -112,11 +112,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .elements-homesection {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin: 1rem;
 }
 .text-homesection {
     margin: 1rem 0;
@@ -142,6 +144,7 @@
     align-self: center;
     width: 19rem;
     height: auto;
+    margin: 1rem;
 }
 .img-homesection img {
     width: 100%;
@@ -170,27 +173,51 @@
 }
 .conten-carrusel {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: hidden;
 }
 .conten-carrusel-button {
     width: auto;
     height: auto;
     position: absolute;
     align-self: center;
-    left: 85%;
 }
 .carrusel-button {
     font-size: 25px;
     color: var(--second-color);
     background-color: var(--fourth-color);
-    padding: .5rem;
+    padding: .7rem 1rem;
     border: none;
+    border-radius: 90px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+.carrusel-button:hover {
+    transform: scale(1.08);
+    opacity: .9;
+    color: var(--first-color);
+}
+.button-next {
+    left: 85%;
+}
+.button-previous {
+    right: 85%;
+    transform: scale(-1);
+}
+#buttonPrevious {
+    display: none;
+}
+#buttonPrevious.visible {
+    transition: all .3s ease-in-out;
+    display: block; 
+}
+.conten-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 .card {
-    width: 13rem;
-    height: 23rem;
+    width: 15rem;
+    height: 25rem;
     margin: 1rem;
     /* background-color: var(--third-backgroud-color); */
     display: flex;
