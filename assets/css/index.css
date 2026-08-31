@@ -2,7 +2,8 @@
 :root {
     --first-background-color: #111111;
     --second-background-color: #181818;
-    --third-backgroud-color: #ffffff4a;
+    --third-background-color: #ffffff4a;
+    --fourth-backgound-color: #050505;
     --first-color: #E52421;
     --second-color: #ffffff;
     --third-color: #9E9E9E;
@@ -126,7 +127,7 @@
     color: var(--fourth-color);
     font-family: var(--second-font-family);
     /* text-shadow: 0px 1px 3px rgba(f, f, f, 0.9); */
-    background-color: var(--third-backgroud-color);
+    background-color: var(--third-background-color);
     padding: 1rem;
     border: none;
     outline: 1px solid var(--second-color);
@@ -156,6 +157,7 @@
     height: 80%;
     width: auto;
     padding: 3rem 10%;
+    background-color: var(--first-background-color);
 }
 .catalog-text {
     display: flex;
@@ -219,7 +221,7 @@
     width: 15rem;
     height: 25rem;
     margin: 1rem;
-    /* background-color: var(--third-backgroud-color); */
+    /* background-color: var(--third-background-color); */
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
@@ -259,4 +261,34 @@
 }
 .data-card-alcohol {
     color: var(--fifth-color);
+}
+/* *tercera seccion-----------------------------*/
+.preparation-section {
+    padding: 3rem 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--fourth-backgound-color);
+}
+.conten-preparation-img {}
+.conten-instructions {
+}
+.instructions-ol {
+    list-style: none;
+}
+.instructions-li h4 {
+    color: var(--first-color);
+    font-family: var(--third-font-family);
+    margin: 1rem 1rem 0 1rem;
+    display: inline-block;
+    font-size: 20px;
+}
+.instructions-li p {
+    color: var(--second-color);
+    font-family: var(--first-font-family);
+    margin: .8rem;
+    font-size: 16px;
+    margin: 1rem;
 }
