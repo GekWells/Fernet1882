@@ -3,7 +3,8 @@
     --first-background-color: #111111;
     --second-background-color: #181818;
     --third-background-color: #ffffff4a;
-    --fourth-backgound-color: #050505;
+    --fourth-backgound-color: #151515;
+    --fifth-backgound-color: #1b1b1b;
     --first-color: #E52421;
     --second-color: #ffffff;
     --third-color: #9E9E9E;
@@ -27,6 +28,9 @@
     margin: 0;
     padding: 0;
     /* outline: 1px solid blue; */
+}
+html{
+    scroll-behavior: smooth;
 }
 .body {
     background-color: var(--second-background-color);
@@ -99,7 +103,7 @@
 .main-section {
     background-color: var(--first-background-color);
     width: auto;
-    height: 95vh;
+    height: 100vh;
 }
 .background-homesection {
     width: auto;
@@ -311,4 +315,43 @@
     font-family: var(--first-font-family);
     font-size: 18px;
     margin: 1rem 0;
+}
+/* *cuarta seccion-----------------------------*/
+.about_us-section {
+    padding: 5rem 10%;
+    background-color: var(--fifth-backgound-color);
+}
+.conten-about_us {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.about_us-text {
+    margin: 1rem;
+    margin-top: 3rem;
+    width: 30%;
+}
+.about_us-text p {
+    color: var(--second-color);
+    font-family: var(--first-font-family);
+    font-size: 16px;
+    text-align: center;
+    margin: 1rem 0;
+}
+.about_us-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--first-color);
+    font-size: 25px;
+}
+.about_us-icon h5 {
+    margin-left: 1rem;
+    color: var(--second-color);
+    font-family: var(--third-font-family);
+    font-size: 22px;
+    font-weight: 100;
 }
