@@ -100,3 +100,7 @@ contenCard.addEventListener("scroll", () => {
         buttonPrevious.classList.remove("visible"); 
     }
 });
+
+
+//Para que el boton de ver producto funcione y te lleve a la seccion de productos
+

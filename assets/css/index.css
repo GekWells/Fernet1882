@@ -144,7 +144,14 @@ html{
     border: none;
     font-family: var(--first-font-family);
     background-color: var(--first-background-color);
+    transition: all .3s ease;
     color: var(--second-color);
+}
+.button-homesection:hover {
+    color: var(--first-color);
+    opacity: .99;
+    transition: all .3s ease;
+    transform: scale(1.03);
 }
 .img-homesection {
     align-self: center;
@@ -178,6 +185,10 @@ html{
     font-family: var(--first-font-family);
     color: var(--third-color);
     text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+.catalog-link:hover {
+    color: var(--first-color);
 }
 .conten-carrusel {
     display: flex;
@@ -189,26 +200,41 @@ html{
     align-self: center;
 }
 .carrusel-button {
-    font-size: 25px;
     color: var(--second-color);
-    background-color: var(--fourth-color);
-    padding: .7rem 1rem;
+    /* background-color: var(--fourth-color); */
+    background-color: #0000;
     border: none;
-    border-radius: 90px;
+    /* padding: .6rem .6rem .5rem .7rem; */
+    /* border-radius: 90px; */
     text-align: center;
     transition: all .3s ease-in-out;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.9);
 }
 .carrusel-button:hover {
     transform: scale(1.08);
     opacity: .9;
     color: var(--first-color);
 }
+.material-symbols-outline {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-size: 35px;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    --webkit-font-feature-settings: 'liga';
+    --webkit-font-smoothing: antialiased;
+}
 .button-next {
     left: 85%;
 }
 .button-previous {
     right: 85%;
-    transform: scale(-1);
 }
 #buttonPrevious {
     display: none;
@@ -433,12 +459,15 @@ html{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    filter: contrast(200%) invert(100%) opacity(80%);
+}
+.footer-social-li:hover {
+    filter: contrast(200%) invert(100%) opacity(100%);
 }
 .footer-social-li {
     width: 50px;
     height: 50px;
     margin: 1rem;
+    filter: contrast(200%) invert(100%) opacity(70%);
 }
 .footer-social-li a img {
     width: 100%;
