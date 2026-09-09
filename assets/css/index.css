@@ -305,12 +305,12 @@ html{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: 3rem;
 }
 .conten-preparation-img {
-    min-width: 25%;
-    max-width: 30%;
+    max-width: 365px;
     height: 60vh;
-    margin-top: 3rem;
+    margin: 1rem;
 }
 .conten-preparation-img img {
     width: 100%;
@@ -320,6 +320,7 @@ html{
 .conten-instructions {
     width: 60%;
     height: auto;
+    margin: 1rem;
 }
 .instructions-ol {
     list-style: none;
@@ -353,12 +354,12 @@ html{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 .about_us-text {
     margin: 1rem;
     margin-top: 4rem;
-    width: 30%;
+    width: 360px;
 }
 .about_us-text p {
     color: var(--second-color);
@@ -393,6 +394,7 @@ html{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .footer-logo {
     display: flex;
@@ -456,6 +458,7 @@ html{
 .footer-social ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -494,3 +497,32 @@ html{
     font-family: var(--first-font-family);
     font-size: 14px;
 }
+/* .......................................... Diseño responsivo */
+/* tablets */ 
+/* @media (max-width: 768px) {}; */
+/* telfonos */
+@media (max-width: 525px) {
+    .footer-container {
+    justify-content: center;
+    }
+    .footer-nav ul li {
+        text-align: center;
+    }
+}
+@media (max-width: 1000px) {
+    .conten-preparation {
+        justify-content: center;
+    }
+    .conten-instructions {
+        width: auto;
+    }
+    /* .instructions-ol {
+        text-align: center
+    } */
+    .about_us-text {
+        width: auto;
+    }
+    .footer-container {
+        justify-content: center
+    }
+};
