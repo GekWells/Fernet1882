@@ -63,7 +63,7 @@ html{
 .nav {
     display: flex;
     flex-direction: row;
-    width: 50vw;
+    width: auto;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
@@ -71,6 +71,13 @@ html{
 .nav-item {
     list-style: none;
     position: relative;
+    margin: 0 1rem;
+}
+.conten-nav-menu {
+    display: none;
+    transform: scale(1.3);
+    color: var(--third-color);
+    padding: 0 .5rem;
 }
 .nav-link {
     text-decoration: none;
@@ -117,6 +124,7 @@ html{
     display: flex;
     flex-direction: row;
     align-items: center;
+    align-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -130,7 +138,7 @@ html{
     border: none;
     padding: 1rem;
     margin: 2rem 0;
-    font-size: 50px;
+    font-size: 313%;
     color: var(--second-color);
     font-family: var(--third-font-family);
     font-weight: 300;
@@ -163,6 +171,7 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 100%;
 }
 /* *segunda seccion-----------------------------*/
 .catalog-section {
@@ -301,7 +310,6 @@ html{
 }
 .conten-preparation {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -498,10 +506,23 @@ html{
     font-size: 14px;
 }
 /* .......................................... Diseño responsivo */
-/* tablets */ 
-/* @media (max-width: 768px) {}; */
-/* telfonos */
 @media (max-width: 525px) {
+    .title {
+        font-size: 120%;
+    }
+    .catalog-link {
+        display: none;
+    }
+    .text-homesection {
+        font-size: 200%;
+    }
+    .conten-instructions {
+        margin: 1rem 0;
+    }
+    .about_us-text {
+        margin: 1rem 0;
+        margin-top: 4rem;
+    }
     .footer-container {
     justify-content: center;
     }
@@ -509,9 +530,41 @@ html{
         text-align: center;
     }
 }
+@media (max-width: 600px) {
+    .nav-item {
+        display: none;
+    }
+    .conten-nav-menu {
+        display: inline;
+    }
+    .elements-homesection {
+        align-items: center;
+    }
+}
 @media (max-width: 1000px) {
+    .header {
+        padding: .5rem;
+    }
+    .main-section {
+        height: auto;
+    }
+    .background-homesection {
+        height: auto;
+        padding-bottom: 4rem;
+    }
+    .img-homesection {
+        width: 40%;
+    }
     .conten-preparation {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    .conten-preparation-img {
+        height: auto;
+        width: auto;
+    }
+    .conten-preparation-img img {
+        object-fit: contain;
     }
     .conten-instructions {
         width: auto;
