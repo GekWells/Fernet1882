@@ -1,10 +1,34 @@
+//el menú
+
+const menuBtn = document.getElementById("menuBtn");
+const navList = document.getElementById("navList");
+const navLinks = document.querySelectorAll(".nav-link");
+
+if (menuBtn && navList) {
+    menuBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // Evita que el clic se propague al documento
+        navList.classList.toggle("active");
+    });
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navList.classList.remove("active");
+        });
+    });
+    document.addEventListener("click", (event) => {
+        if (!navList.contains(event.target) && !menuBtn.contains(event.target)) {
+            navList.classList.remove("active");
+        }
+    });
+}
+
+
+//parte de los productos
+
 const contenCard = document.getElementById("contenCard");
 const buttonNext = document.getElementById("buttonNext");
 const buttonPrevious = document.getElementById("buttonPrevious");
 
-
-
-const bebidas = [,
+const bebidas = [
     {
         titulo: "Fernet 1882 Original",
         quantityMl: "1 Litro",
@@ -52,55 +76,62 @@ const bebidas = [,
         quantityMl: "720ml",
         quantityAlcohol: "40%",
         image: "https://bar-drinks.ar/wp-content/uploads/2026/06/Fermelo-2-1.jpg"
-    },
-    {
-        titulo: "Fernet 1882 Original",
-        quantityMl: "720ml",
-        quantityAlcohol: "40%",
-        image: "https://bar-drinks.ar/wp-content/uploads/2026/06/Fermelo-2-1.jpg"
     }
-]
-
+];
 
 
 contenCard.innerHTML = bebidas.map(trago => `
     <div class="card">
-    <div class="card-img">
-        <img src="${trago.image}" alt="imagen_del_producto">
-    </div>
-    <div class="text-card">
-        <div class="title-card">
-            <p>${trago.titulo}</p>
+        <div class="card-img">
+            <img src="${trago.image}" alt="${trago.titulo}">
         </div>
-        <div class="data-card">
-            <p>${trago.quantityMl}</p>
-            <p class="data-card-alcohol">${trago.quantityAlcohol}</p>
+        <div class="text-card">
+            <div class="title-card">
+                <p>${trago.titulo}</p>
+            </div>
+            <div class="data-card">
+                <p>${trago.quantityMl}</p>
+                <p class="data-card-alcohol">${trago.quantityAlcohol}</p>
+            </div>
         </div>
-    </div>
     </div>`).join("");
 
 
-
+const getScrollAmount = () => {
+    const card = contenCard.querySelector('.card');
+    if (!card) return 300;
+    const cardStyle = window.getComputedStyle(card);
+    const marginLeft = parseFloat(cardStyle.marginLeft) || 0;
+    const marginRight = parseFloat(cardStyle.marginRight) || 0;
+    return (card.offsetWidth + marginLeft + marginRight) * 2; 
+};
 
 buttonNext.addEventListener("click", () => {
-    contenCard.scrollBy({ left: 800, behavior: "smooth" });
+    contenCard.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
 });
 
 buttonPrevious.addEventListener("click", () => {
-    contenCard.scrollBy({ left: -800, behavior: "smooth" });
+    contenCard.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
 });
 
+const updateButtonVisibility = () => {
+    if (window.innerWidth <= 768) return;
 
-
-
-contenCard.addEventListener("scroll", () => {
     if (contenCard.scrollLeft > 10) {
         buttonPrevious.classList.add("visible");
     } else {
-        buttonPrevious.classList.remove("visible"); 
+        buttonPrevious.classList.remove("visible");
     }
-});
 
+    const maxScrollLeft = contenCard.scrollWidth - contenCard.clientWidth - 10;
+    if (contenCard.scrollLeft >= maxScrollLeft) {
+        buttonNext.style.display = "none";
+    } else {
+        buttonNext.style.display = "block";
+    }
+};
 
-//Para que el boton de ver producto funcione y te lleve a la seccion de productos
+contenCard.addEventListener("scroll", updateButtonVisibility);
+window.addEventListener("resize", updateButtonVisibility);
 
+updateButtonVisibility();

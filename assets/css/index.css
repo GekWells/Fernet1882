@@ -11,10 +11,7 @@
     --fourth-color: #050505;
     --fifth-color: #727272;
     --sixth-color: #1900ff;
-    /*   
-    --first-background-color: #121212;
-    --second-background-color: #2b2b2b;
-    */
+    --opacity-background: #ffffff00;
 }
 :root {
     --first-font-family: 'Montserrat', sans-serif;      /*textos de parrafo, menu, botones*/
@@ -28,6 +25,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
     /* outline: 1px solid blue; */
 }
 html{
@@ -60,9 +58,11 @@ html{
     height: 100%;
     object-fit: cover;
 }
-.nav {
+/* .nav {} */
+.nav-list {
     display: flex;
     flex-direction: row;
+    list-style: none;
     width: auto;
     justify-content: space-evenly;
     align-items: center;
@@ -256,7 +256,14 @@ html{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+}
+.conten-card::-webkit-scrollbar {
+    display: none;
 }
 .card {
     width: 15rem;
@@ -267,6 +274,7 @@ html{
     flex-shrink: 0;
     flex-direction: column;
     justify-content: flex-start;
+    scroll-snap-align: start;
 }
 .card-img {
     width: auto;
@@ -531,14 +539,44 @@ html{
     }
 }
 @media (max-width: 600px) {
+    .header {
+        position: relative;
+    }
     .nav-item {
-        display: none;
+        display: block;
+        margin: 0.8rem 0;
+        text-align: center;
     }
     .conten-nav-menu {
-        display: inline;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+        .conten-nav-menu {
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+    }
+    .nav-list {
+        display: none; 
+        position: absolute;
+        top: 0; 
+        right: 0;
+        width:auto;
+        background-color: var(--opacity-background);
+        backdrop-filter: blur(10px);
+        border: none;
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        z-index: 1000;
+    }
+    .nav-list.active {
+        display: flex;
     }
     .elements-homesection {
         align-items: center;
+    }
+    .conten-carrusel-button {
+        display: none !important;
     }
 }
 @media (max-width: 1000px) {
